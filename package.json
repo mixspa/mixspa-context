@@ -1,0 +1,60 @@
+{
+  "name": "@mixspa/mixspa-loader",
+  "version": "0.1.0",
+  "description": "This is a loader for loader micro site into main site",
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">= 6"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rm -rf ./lib",
+    "babel": "babel src --out-dir lib --copy-files",
+    "babel:watch": "watch 'yarn babel' ./src",
+    "build": "yarn clean && yarn babel",
+    "lint": "eslint src",
+    "test": "jest --coverage --config config/jest.config.js",
+    "test:watch": "watch 'yarn test' ./src"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^7.0.0-bridge",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.9.0",
+    "eslint-plugin-jest": "^22.0.0",
+    "jest": "^23.6.0",
+    "watch": "^1.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xqstencils/mixspa-loader.git"
+  },
+  "keywords": [
+    "lib",
+    "node",
+    "babel",
+    "jest",
+    "eslint",
+    "security",
+    "circleci"
+  ],
+  "author": "Cao Xiaoqi<xqcao@xqcao.com>",
+  "contributors": [
+    "Xiaoqi Cao"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xqstencils/mixspa-loader/issues"
+  },
+  "homepage": "https://github.com/xqstencils/mixspa-loader#readme"
+}
