@@ -32,4 +32,12 @@ describe('DomUtil', () => {
       expect(style.rel).toBe('stylesheet');
     });
   });
+
+  describe('#create iframe', () => {
+    let iframe = DomUtil.createIFrame('http://test-url/');
+
+    it('should set src attribute', () => {
+      expect(iframe.src).toBe('http://test-url/');
+    });
+  });
 });

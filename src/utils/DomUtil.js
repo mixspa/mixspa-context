@@ -14,6 +14,12 @@ class DomUtil {
     style.href = href;
     return style;
   }
+
+  static createIFrame(src) {
+    let iframe = document.createElement('iframe');
+    iframe.src = src;
+    return iframe;
+  }
 }
 
 export default DomUtil;
