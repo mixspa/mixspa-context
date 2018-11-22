@@ -6,6 +6,14 @@ class DomUtil {
     script.src = src;
     return script;
   }
+
+  static createStyle(href) {
+    let style = document.createElement('link');
+    style.type = 'text/css';
+    style.rel = 'stylesheet';
+    style.href = href;
+    return style;
+  }
 }
 
 export default DomUtil;
