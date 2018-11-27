@@ -1,8 +1,8 @@
-import DomUtil from './DomUtil';
+import { createScript, createStyle } from './domHelper';
 
-describe('DomUtil', () => {
+describe('DomHelper', () => {
   describe('#create script', () => {
-    let script = DomUtil.createScript('http://test-url/');
+    let script = createScript('http://test-url/');
 
     it('should set src attribute', () => {
       expect(script.src).toBe('http://test-url/');
@@ -18,7 +18,7 @@ describe('DomUtil', () => {
   });
 
   describe('#create style', () => {
-    let style = DomUtil.createStyle('http://test-url/');
+    let style = createStyle('http://test-url/');
 
     it('should set href attribute', () => {
       expect(style.href).toBe('http://test-url/');
@@ -30,14 +30,6 @@ describe('DomUtil', () => {
 
     it('should set rel attribute', () => {
       expect(style.rel).toBe('stylesheet');
-    });
-  });
-
-  describe('#create iframe', () => {
-    let iframe = DomUtil.createIFrame('http://test-url/');
-
-    it('should set src attribute', () => {
-      expect(iframe.src).toBe('http://test-url/');
     });
   });
 });
