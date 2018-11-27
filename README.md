@@ -3,11 +3,11 @@ Mixspa-Loader is a Loader for loader another spa in current application.
 
 ## Current Status:
 
-[![NPM Version](https://img.shields.io/npm/v/@mixspa/mixspa-loader.svg)](https://npmjs.org/package/@mixspa/mixspa-loader)
-[![NPM Downloads](https://img.shields.io/npm/dm/@mixspa/mixspa-loader.svg)](https://npmjs.org/package/@mixspa/mixspa-loader)
-[![Build Status](https://circleci.com/gh/mixspa/mixspa-loader.svg?style=svg)](https://circleci.com/gh/mixspa/mixspa-loader)
+[![NPM Version](https://img.shields.io/npm/v/@mixspa/loader.svg)](https://npmjs.org/package/@mixspa/loader)
+[![NPM Downloads](https://img.shields.io/npm/dm/@mixspa/loader.svg)](https://npmjs.org/package/@mixspa/loader)
+[![Build Status](https://circleci.com/gh/mixspa/loader.svg?style=svg)](https://circleci.com/gh/mixspa/loader)
 
-[![NPM](https://nodei.co/npm/@mixspa/mixspa-loader.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/@mixspa/mixspa-loader/)
+[![NPM](https://nodei.co/npm/@mixspa/loader.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/@mixspa/loader/)
 
 ## Features:
 
@@ -22,7 +22,7 @@ Mixspa-Loader is a Loader for loader another spa in current application.
 
 ### Setup
 
-Clone this stencil and replace `@mixspa/mixspa-loader` with your package name.
+Clone this stencil and replace `@mixspa/loader` with your package name.
 
 ```
 $ git clone git@github.com:mixspa/mixspa-loader.git

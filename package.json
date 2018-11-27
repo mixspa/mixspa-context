@@ -1,5 +1,5 @@
 {
-  "name": "@mixspa/mixspa-loader",
+  "name": "@mixspa/loader",
   "version": "0.1.0",
   "description": "This is a loader for loader micro site into main site",
   "main": "lib/index.js",
@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "clean": "rm -rf ./lib",
-    "babel": "babel src --out-dir lib --copy-files",
+    "babel": "babel src --out-dir lib --ignore 'src/**/*.spec.js'",
     "babel:watch": "watch 'yarn babel' ./src",
     "build": "yarn clean && yarn babel",
     "lint": "eslint src",
