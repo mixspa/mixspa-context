@@ -1,1 +1,1 @@
-export default from './loadApp';
+export default from './MixspaLoader';
