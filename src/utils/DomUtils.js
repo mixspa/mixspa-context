@@ -1,7 +1,7 @@
-class DomHelper {
+class DomUtils {
   static loadResource(url) {
-    let element = url.endsWith('.js') ? DomHelper.createScript(url) : DomHelper.createStyle(url);
-    return DomHelper.loadElement(element);
+    let element = url.endsWith('.js') ? DomUtils.createScript(url) : DomUtils.createStyle(url);
+    return DomUtils.loadElement(element);
   }
 
   static loadElement(element) {
@@ -29,4 +29,4 @@ class DomHelper {
   }
 }
 
-export default DomHelper;
+export default DomUtils;

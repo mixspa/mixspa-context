@@ -1,26 +1,26 @@
-import DomHelper from './DomHelper';
+import DomUtils from './DomUtils';
 
-describe('DomHelper', () => {
+describe('DomUtils', () => {
   describe('loadResource', () => {
     beforeEach(() => {
       document.body.appendChild = jest.fn().mockImplementation(dom => dom.onload());
     });
 
     it('should append once for load style', () => {
-      return DomHelper.loadResource('http://app-one.mixspa.com/1.css').then(() => {
+      return DomUtils.loadResource('http://app-one.mixspa.com/1.css').then(() => {
         expect(document.body.appendChild).toHaveBeenCalledTimes(1);
       });
     });
 
     it('should append once for load script', () => {
-      return DomHelper.loadResource('http://app-one.mixspa.com/1.js').then(() => {
+      return DomUtils.loadResource('http://app-one.mixspa.com/1.js').then(() => {
         expect(document.body.appendChild).toHaveBeenCalledTimes(1);
       });
     });
   });
 
   describe('#create script', () => {
-    let script = DomHelper.createScript('http://test-url/');
+    let script = DomUtils.createScript('http://test-url/');
 
     it('should set src attribute', () => {
       expect(script.src).toBe('http://test-url/');
@@ -36,7 +36,7 @@ describe('DomHelper', () => {
   });
 
   describe('#create style', () => {
-    let style = DomHelper.createStyle('http://test-url/');
+    let style = DomUtils.createStyle('http://test-url/');
 
     it('should set href attribute', () => {
       expect(style.href).toBe('http://test-url/');

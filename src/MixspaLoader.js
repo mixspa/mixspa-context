@@ -1,5 +1,5 @@
 import Context from './utils/Context';
-import DomHelper from './utils/DomHelper';
+import DomUtils from './utils/DomUtils';
 
 class MixspaLoader {
   static addAppInfo(appInfo) {
@@ -34,7 +34,7 @@ class MixspaLoader {
     if (Context.includeUrl(url)) {
       return Promise.resolve(url);
     } else {
-      return DomHelper.loadResource(url).then(() => Context.addUrl(url) || url);
+      return DomUtils.loadResource(url).then(() => Context.addUrl(url) || url);
     }
   }
 
