@@ -5,80 +5,87 @@ Mixspa-Loader is a Loader for loader another spa in current application.
 
 [![NPM Version](https://img.shields.io/npm/v/@mixspa/loader.svg)](https://npmjs.org/package/@mixspa/loader)
 [![NPM Downloads](https://img.shields.io/npm/dm/@mixspa/loader.svg)](https://npmjs.org/package/@mixspa/loader)
-[![Build Status](https://circleci.com/gh/mixspa/loader.svg?style=svg)](https://circleci.com/gh/mixspa/loader)
+[![Build Status](https://circleci.com/gh/mixspa/mixspa-loader.svg?style=svg)](https://circleci.com/gh/mixspa/mixspa-loader)
 
 [![NPM](https://nodei.co/npm/@mixspa/loader.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/@mixspa/loader/)
 
-## Features:
+## How to use?
 
-* Support Publish your package to git & npm with ci.
-* Support CircleCi for pipeline.
-* Support ES7 & ES6 syntax.
-* Support ESlint to check the code.
-* Support Jest to test your code.
-* Support Yarn audit to do security check for dependencies.
+There are three ways to load a app.
 
-## Development:
+### 1. Load app from remove site.
 
-### Setup
+**First:** We assume you have a app in remote server, we can use a url to access it. e.g.: `https://www.app-demo.com`
 
-Clone this stencil and replace `@mixspa/loader` with your package name.
+**Second:** We assume you already create a app.json in remote server. e.g.: `https://www.app-demo.com/app.json`
 
-```
-$ git clone git@github.com:mixspa/mixspa-loader.git
-```
-
-### Install dependencies
-
-```
-$ yarn install
+The app.json looks like this:
+```js
+{
+  name: 'AppDemo',
+  tagName: 'app-demo',
+  styles: ['https://www.app-demo.com/app.js'],
+  scripts: ['https://www.app-demo.com/app.css']
+}
 ```
 
-### Compile code
+**Third:** You can use MixspaLoader to load app like this:
 
-```
-$ yarn babel
-# or run babel in watch mode
-$ yarn babel:watch
-```
-
-### Generate distribution code
-
-```
-$ yarn build
+```html
+<html>
+  <body>
+    <div id="app-container"></div>
+  </body>
+</html>
 ```
 
-### Linting
+```js
+import MixspaLoader from '@mixspa/loader';
 
-```
-$ yarn lint
-```
-
-### Testing
-
-```
-$ yarn test
-# or run the test in watch mode
-$ yarn test:watch
+MixspaLoader.loadApp('AppDemo', 'https://www.app-demo.com/app.json').then(appInfo => {
+  let el = document.createElement(appInfo.tagName);
+  el.attributeOne = 'attribute one';
+  document.getElementById('app-container').appendChild(el);
+});
 ```
 
-### Security check
+### 2. Load app from remove site without remote app.json.
 
+You should add app info first when you load app like above
+
+```js
+import MixspaLoader from '@mixspa/loader';
+
+MixspaLoader.addAppInfo({
+  name: 'AppDemo',
+  tagName: 'app-demo',
+  styles: ['https://www.app-demo.com/app.js'],
+  scripts: ['https://www.app-demo.com/app.css']
+});
+
+MixspaLoader.loadApp('AppDemo', 'https://www.app-demo.com/app.json').then(appInfo => {
+  let el = document.createElement(appInfo.tagName);
+  el.attributeOne = 'attribute one';
+  document.getElementById('app-container').appendChild(el);
+});
 ```
-$ yarn audit
+
+### 3. Load a very simple app from remote.
+
+In here, we define the simple app is only have one `js` file.
+
+```js
+import MixspaLoader from '@mixspa/loader';
+
+MixspaLoader.loadSimpleApp('https://www.app-simple-demo.com/app.js').then(() => {
+  let el = document.createElement('app-simple-demo');
+  el.attributeOne = 'attribute one';
+  document.getElementById('app-container').appendChild(el);
+});
 ```
 
-### Setup CI
+NOTE: For simple app, you should provide the `tag name`.
 
-* Update the circleci config
-* Setup the ci into circleci site.
-
-
-### Publish your package
-
-```
-$ yarn release
-```
 
 ## License
 
