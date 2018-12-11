@@ -1,6 +1,6 @@
 {
   "name": "@mixspa/loader",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "This is a loader for loader micro site into main site",
   "main": "lib/index.js",
   "engines": {
