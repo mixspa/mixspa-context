@@ -37,7 +37,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xqstencils/mixspa-loader.git"
+    "url": "git+https://github.com/mixspa/mixspa-loader.git"
   },
   "keywords": [
     "lib",
@@ -54,7 +54,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xqstencils/mixspa-loader/issues"
+    "url": "https://github.com/mixspa/mixspa-loader/issues"
   },
-  "homepage": "https://github.com/xqstencils/mixspa-loader#readme"
+  "homepage": "https://github.com/mixspa/mixspa-loader#readme"
 }
