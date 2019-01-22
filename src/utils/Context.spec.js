@@ -3,8 +3,8 @@ import Context from './Context';
 describe('Context', () => {
   describe('appInfo', () => {
     let appInfo = {
-      name: 'test',
-      tagName: 'test'
+      tag: 'test',
+      name: 'test'
     };
     beforeEach(() => {
       window.__mixspa__context_apps = {};
@@ -23,9 +23,13 @@ describe('Context', () => {
   describe('url', () => {
     let url = 'http://test.com/test.js';
 
+    it('should without url into global', () => {
+      expect(Context.withoutUrl(url)).toBeTruthy();
+    });
+
     it('should include url into global', () => {
       Context.addUrl(url);
-      expect(Context.includeUrl(url)).toBeTruthy();
+      expect(Context.withoutUrl(url)).toBeFalsy();
     });
   });
 });

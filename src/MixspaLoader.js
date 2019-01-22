@@ -7,11 +7,8 @@ class MixspaLoader {
   }
 
   static loadApp(name, url) {
-    return MixspaLoader.loadAppInfo(name, url).then(appInfo => {
-      return MixspaLoader.loadResources(appInfo.scripts.concat(appInfo.styles)).then(() => {
-        return Promise.resolve(appInfo);
-      });
-    });
+    return MixspaLoader.loadAppInfo(name, url)
+      .then(appInfo => MixspaLoader.loadAssets(appInfo.assets).then(() => appInfo));
   }
 
   static loadSimpleApp(url) {
@@ -26,15 +23,15 @@ class MixspaLoader {
     }
   }
 
-  static loadResources(urls) {
+  static loadAssets(urls) {
     return Promise.all(urls.map(MixspaLoader.loadResource));
   }
 
   static loadResource(url) {
-    if (Context.includeUrl(url)) {
-      return Promise.resolve(url);
-    } else {
+    if (Context.withoutUrl(url)) {
       return DomUtils.loadResource(url).then(() => Context.addUrl(url) || url);
+    } else {
+      return Promise.resolve(url);
     }
   }
 

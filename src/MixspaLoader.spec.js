@@ -4,10 +4,9 @@ describe('MixspaLoader', () => {
   let appTestName = 'AppTest';
   let appTestUrl = 'http://app-test.com/app-test.json';
   let appTestInfo = {
+    tag: 'app-test',
     name: appTestName,
-    tagName: 'app-test',
-    styles: ['http://app-test.com/app-test.css'],
-    scripts: ['http://app-test.com/app-test.js']
+    assets: ['http://app-test.com/app-test.js', 'http://app-test.com/app-test.css']
   };
 
   beforeEach(() => {

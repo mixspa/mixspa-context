@@ -14,8 +14,8 @@ class Context {
     return window.__mixspa__context_apps.hasOwnProperty(name);
   }
 
-  static includeUrl(url) {
-    return window.__mixspa__context_urls.includes(url);
+  static withoutUrl(url) {
+    return !window.__mixspa__context_urls.includes(url);
   }
 
   static addUrl(url) {
