@@ -22,10 +22,9 @@ There are three ways to load a app.
 The app.json looks like this:
 ```js
 {
+  tag: 'app-demo',
   name: 'AppDemo',
-  tagName: 'app-demo',
-  styles: ['https://www.app-demo.com/app.js'],
-  scripts: ['https://www.app-demo.com/app.css']
+  assets: ['https://www.app-demo.com/app.js', 'https://www.app-demo.com/app.css']
 }
 ```
 
@@ -43,7 +42,7 @@ The app.json looks like this:
 import MixspaLoader from '@mixspa/loader';
 
 MixspaLoader.loadApp('AppDemo', 'https://www.app-demo.com/app.json').then(appInfo => {
-  let el = document.createElement(appInfo.tagName);
+  let el = document.createElement(appInfo.tag);
   el.attributeOne = 'attribute one';
   document.getElementById('app-container').appendChild(el);
 });
@@ -57,14 +56,13 @@ You should add app info first when you load app like above
 import MixspaLoader from '@mixspa/loader';
 
 MixspaLoader.addAppInfo({
+  tag: 'app-demo',
   name: 'AppDemo',
-  tagName: 'app-demo',
-  styles: ['https://www.app-demo.com/app.js'],
-  scripts: ['https://www.app-demo.com/app.css']
+  assets: ['https://www.app-demo.com/app.js', 'https://www.app-demo.com/app.css']
 });
 
 MixspaLoader.loadApp('AppDemo', 'https://www.app-demo.com/app.json').then(appInfo => {
-  let el = document.createElement(appInfo.tagName);
+  let el = document.createElement(appInfo.tag);
   el.attributeOne = 'attribute one';
   document.getElementById('app-container').appendChild(el);
 });
